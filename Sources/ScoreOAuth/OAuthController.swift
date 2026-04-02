@@ -10,6 +10,14 @@ import Score
 struct OAuthController: Controller {
     let config: OAuthConfig
 
+    init() {
+        self.config = OAuthConfig(providers: [])
+    }
+
+    init(config: OAuthConfig) {
+        self.config = config
+    }
+
     var base: String { "/auth/oauth" }
 
     var routes: [Route] {
